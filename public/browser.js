@@ -43,7 +43,7 @@ document.addEventListener("click", function(event) {
     //update feature
     if (event.target.classList.contains("edit-me")) {
        let userInput = prompt("Enter New Text", event.target.parentElement.parentElement.querySelector(".item-text").innerHTML)
-      if(userINput) {
+      if(userInput) {
         axios.post("/edit-item", {text: userInput, id: event.target.getAttribute("data-id") }).then(function() {
             event.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput
          }).catch(function() {
